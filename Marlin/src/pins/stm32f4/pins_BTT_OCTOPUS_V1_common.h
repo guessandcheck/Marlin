@@ -38,7 +38,12 @@
 //
 // Servos
 //
-#define SERVO0_PIN                          PB6
+
+
+#ifdef SPINDLE_FEATURE
+  #define SPINDLE_LASER_ENA_PIN             PB7
+  #define SPINDLE_LASER_PWM_PIN             PB0
+#endif
 
 //
 // Misc. Functions
@@ -240,6 +245,7 @@
 #define HEATER_1_PIN                        PA3   // Heater1
 #define HEATER_2_PIN                        PB10  // Heater2
 #define HEATER_3_PIN                        PB11  // Heater3
+
 
 #define FAN_PIN                             PA8   // Fan0
 #define FAN1_PIN                            PE5   // Fan1
@@ -516,9 +522,9 @@
 //
 // NeoPixel LED
 //
-#ifndef NEOPIXEL_PIN
-  #define NEOPIXEL_PIN                      PB0
-#endif
+// #ifndef NEOPIXEL_PIN
+//   #define NEOPIXEL_PIN                      PB0
+// #endif
 
 //
 // WIFI
@@ -543,3 +549,4 @@
 #define ESP_WIFI_MODULE_ENABLE_PIN          PG8
 #define ESP_WIFI_MODULE_GPIO0_PIN           PD7
 #define ESP_WIFI_MODULE_GPIO4_PIN           PD10
+
