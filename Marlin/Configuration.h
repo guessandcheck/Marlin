@@ -1091,7 +1091,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5 }
+#define DEFAULT_MAX_FEEDRATE          { 15000, 15000, 5 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1526,8 +1526,8 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR true
+#define INVERT_X_DIR true
+#define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
 //#define INVERT_I_DIR false
 //#define INVERT_J_DIR false
@@ -1574,8 +1574,8 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 475
-#define Y_BED_SIZE 600
+#define X_BED_SIZE 1120
+#define Y_BED_SIZE 1000
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
