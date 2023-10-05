@@ -40,7 +40,7 @@
 //
 
 
-#ifdef SPINDLE_FEATURE
+#if EITHER(SPINDLE_FEATURE, LASER_FEATURE)
   #define SPINDLE_LASER_ENA_PIN             PB7
   #define SPINDLE_LASER_PWM_PIN             PB0
 #endif
