@@ -42,7 +42,7 @@
 
 #if EITHER(SPINDLE_FEATURE, LASER_FEATURE)
   #define SPINDLE_LASER_ENA_PIN             PB7
-  #define SPINDLE_LASER_PWM_PIN             PB0
+  #define SPINDLE_LASER_PWM_PIN             PA8//PB0
 #endif
 
 //
@@ -247,7 +247,7 @@
 #define HEATER_3_PIN                        PB11  // Heater3
 
 
-#define FAN_PIN                             PA8   // Fan0
+// #define FAN_PIN                             PA8   // Fan0
 #define FAN1_PIN                            PE5   // Fan1
 #define FAN2_PIN                            PD12  // Fan2
 #define FAN3_PIN                            PD13  // Fan3
