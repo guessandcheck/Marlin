@@ -37,7 +37,9 @@
 #include "../lcd/marlinui.h"
 #include "../MarlinCore.h"
 
-float segments_per_second; // Initialized by settings.load()
+// Initialized by settings.load()
+float segments_per_second, polargraph_max_belt_len;
+xy_pos_t draw_area_min, draw_area_max;
 
 xy_pos_t draw_area_min = { X_MIN_POS, Y_MIN_POS },
          draw_area_max = { X_MAX_POS, Y_MAX_POS };
@@ -47,7 +49,7 @@ xy_float_t draw_area_size = { X_MAX_POS - X_MIN_POS, Y_MAX_POS - Y_MIN_POS };
 float polargraph_max_belt_len = HYPOT(draw_area_size.x, draw_area_size.y);
 
 void inverse_kinematics(const xyz_pos_t &raw) {
-  const float x1 = raw.x - (draw_area_min.x), x2 = (draw_area_max.x) - raw.x, y = raw.y - (draw_area_max.y);
+  const float x1 = raw.x - draw_area_min.x, x2 = draw_area_max.x - raw.x, y = raw.y - draw_area_max.y;
   delta.set(HYPOT(x1, y), HYPOT(x2, y), raw.z);
 }
 
